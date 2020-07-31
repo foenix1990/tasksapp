@@ -1,0 +1,50 @@
+/* FLEX CONTAINER */
+@mixin flex ($hpos, $vpos, $type) {
+  display: flex;
+  @if $hpos == left {
+    justify-content: flex-start;
+  } @else if $hpos == right {
+    justify-content: flex-end;
+  } @else {
+    justify-content: center;
+  }
+  @if $vpos == top {
+    align-items: flex-start;
+  } @else if $vpos == bottom {
+    align-items: flex-end;
+  } @else {
+    align-items: center;
+  }
+  @if $type == row {
+    flex-direction: row;
+  } @else if $type == reverse {
+    flex-direction: row-reverse;
+  } @else if $type == column {
+    flex-direction: column;
+  } @else {
+    flex-direction: column-reverse;
+  }
+}
+
+/* BOX CONTAINER */
+@mixin box ($width, $height, $position, $left, $top, $right, $bottom) {
+  @if $width != 0 {
+    width: $width;
+  }
+  @if $height != 0 {
+    height: $height;
+  }
+  @if $left != null {
+    left: $left;
+  }
+  @if $top != null {
+    top: $top;
+  }
+  @if $right != null {
+    right: $right;
+  }
+  @if $bottom != null {
+    bottom: $bottom;
+  }
+  position: $position;
+}
